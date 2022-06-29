@@ -1,0 +1,25 @@
+{
+  "name": "crudreact",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon backend/src/server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Igor713/CrudReact.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Igor713/CrudReact/issues"
+  },
+  "homepage": "https://github.com/Igor713/CrudReact#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "nodemon": "^2.0.18"
+  }
+}
