@@ -14,7 +14,7 @@ todosRoutes.post('/todos', async (req, res) => {
         },
     })
 
-    return res.status(201).json(allTodos)
+    return res.status(201).json(todo)
 })
 
 // Read
@@ -53,17 +53,19 @@ todosRoutes.put('/todos', async (req, res) => {
 })
 
 // Delete
-todosRoutes.delete('/todos/:id', async (res, req) => {
+todosRoutes.delete('/todos/:id', async (req, res) => {
 
     const { id } = req.params
 
-    const intId = parseInd(id)
+    const intId = parseInt(id)
 
     if (!intId) {
         return res.status(400).json('Id is required')
     }
 
-    const todoAlreadyExist = await prisma.todo.findUnique({ where: { intId } })
+    const todoAlreadyExist = await prisma.todo.findUnique({
+        where: { id: intId },
+    })
 
     if (!todoAlreadyExist) {
         return res.status(404).json('Todo not exist')
